@@ -6,7 +6,7 @@ let numberOfFilms;
 function start() {
     numberOfFilms = +prompt('Сколько фильмов вы посмотрели ?', '');
 
-    while (numberOfFilms == '' || isNaN(numberOfFilms) || numberOfFilms == null) { // при === не работает  ('')
+    while (!numberOfFilms) { // при === не работает  ('')
         alert('Ошибка !');
         numberOfFilms = +prompt('Сколько фильмов вы посмотрели ?', '');
     }
@@ -55,7 +55,7 @@ function writeYourGenres() {
         //     k = prompt(`Ваш любимый жанр под номером ${i}`, '');
         // }
         personalMovieDB.gentres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`, '');
-        if (personalMovieDB.gentres[i - 1] == '' || personalMovieDB.gentres[i - 1] == NaN ||
+        if (personalMovieDB.gentres[i - 1] === '' ||
             personalMovieDB.gentres[i - 1] == null) {
             i--;
         }
